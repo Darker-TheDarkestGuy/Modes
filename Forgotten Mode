@@ -1,0 +1,2169 @@
+--[[ NOTE: Made by Artemis ]]--
+
+--[[
+
+Credits to Kotyara19k, Vickokokoko, Oof/PABMAXICHAC, Ame/Awe, Johnny39871, Noah and Vynixu
+
+]]--
+
+local KTWFU = false
+
+if KTWFU then
+
+game:GetService("Players").LocalPlayer:Kick("Wait a update patch!")
+
+end
+
+if not game:IsLoaded(loading) then
+
+if loading then
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+     Title = "Loading";
+     Text = "Wait to loaded";
+})
+
+game.Loaded:Wait()
+
+end
+
+end
+
+local whitelisteds = {"Executor"}
+
+local blacklisteds = {"???"} -- EMILIANO1_199 (idk)
+ 
+if table.find(blacklisteds, game.Players.LocalPlayer.Name) then
+
+local spawn_nm = Instance.new("Sound", workspace)
+ spawn_nm.SoundId = "rbxassetid://7361392680"
+ spawn_nm.Volume = 1
+ spawn_nm:Play()
+local spawn_nm2 = Instance.new("Sound", workspace)
+ spawn_nm2.SoundId = "rbxassetid://5861249932"
+ spawn_nm2.Volume = 1
+ spawn_nm2:Play()
+game:GetService("Players").LocalPlayer:Kick("You has been blacklisted and banned from OFFICIAL_ARTEMIS'S Forgotten Mode for unambiguous use or something 🚫")
+
+end
+
+game.TextChatService.TextChannels.RBXSystem:DisplaySystemMessage("Wait few seconds to next writing message!")
+
+game.Players.PlayerAdded:Connect(function()
+
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(0, 255, 0)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Forgotten Mode script has been succesfully activated (version 2.5)',true)
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 222, 189)
+
+end)
+
+-- audio lol
+
+local idk = Instance.new("Sound", workspace)
+ idk.Name = "Idk"
+ idk.PlaybackSpeed = 1
+ idk.Volume = 1
+
+-- kick working for falling waiting lastest room
+
+print("All works for lastest room")
+
+local kickplr = true
+
+if kickplr then
+
+function kicklp(test)
+
+ local spawn_nm = Instance.new("Sound", workspace)
+  spawn_nm.SoundId = "rbxassetid://7361392680"
+  spawn_nm.Volume = 1
+  spawn_nm:Play()
+ game:GetService("Players").LocalPlayer:Kick(test)
+
+kicklp("Why did you open door? Try not to open the door until you receive a new message!")
+
+end
+
+end
+
+--
+
+-- caption color for text
+
+print("Already here")
+
+-- custom shop (current candle model) [INCOMPATIBLE]
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Idl"))()
+
+print("WARNING: CUSTOM SHOP INCOMPATIBLE NOW, PRE-HOTEL+ WILL BE TO WORKS IN SHOPS")
+
+local non_beated = true
+
+-- to be continued room setup
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" then
+
+game.Players.LocalPlayer.PlayerGui.MainUI.ToBeContinued:GetPropertyChangedSignal("Visible"):Connect(function()
+
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 100 and game.Players.LocalPlayer.PlayerGui.MainUI.ToBeContinued.Visible == true then
+
+---====== Load achievement giver ======---
+local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+ 
+---====== Display achievement ======---
+achievementGiver({
+    Title = "WINNER!",
+    Desc = "🏆 Victory 🏆",
+    Reason = "Beat forgotten mode (Hotel/Mines with to be continued)",
+    Image = "rbxassetid://33336213"
+})
+
+writefile("Forgotten Mode Saves.artemis", "D4AqXH1rbAegvybE8")
+
+end
+
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- modifier
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+
+local Window = Rayfield:CreateWindow({
+	Name = "Modifier | Forgotten Mode",
+	LoadingTitle = "Modifier Loading...",
+	LoadingSubtitle = "by Artemis#0089",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil,
+		FileName = "Doors Forgotten Mode Modifier"
+	},
+	KeySystem = false,
+})
+
+local Tab = Window:CreateTab("Main", 16964919241)
+local Section = Tab:CreateSection("Toggles")
+
+local files = true
+
+if isfile("Forgotten Mode Saves.artemis") then
+
+local pass = readfile("Forgotten Mode Saves.artemis")
+
+if pass == "D4AqXH1rbAegvybE8" then
+
+non_beated = false
+
+files = false
+
+end
+
+end
+
+local Toggle = Tab:CreateToggle({
+	Name = "Fog",
+	CurrentValue = true,
+	Flag = "fog",
+	Callback = function(Value)
+		if Value and files then
+			Rayfield.Flags['fog'].CurrentValue = true
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Error";
+ 				Text = "You haven't reached the end in Hotel/Mines";
+			})
+		end
+	end,
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "Echo Effects",
+	CurrentValue = true,
+	Flag = "EchoEffects",
+	Callback = function(Value)
+		if Value and files then 
+			Rayfield.Flags['EchoEffects'].CurrentValue = true
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Error";
+ 				Text = "You haven't reached the end in Hotel/Mines";
+			})
+		end
+	end,
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "Light's Down",
+	CurrentValue = false,
+	Flag = "LightsDestroy",
+	Callback = function(Value)
+		if Value and files then
+			Rayfield.Flags['LightsDestroy'].CurrentValue = false
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Error";
+ 				Text = "You haven't reached the end in Hotel/Mines";
+			})
+		end
+	end,
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "Cruxion",
+	CurrentValue = true,
+	Flag = "Cruxion",
+	Callback = function(Value)
+		if Value and files then
+			Rayfield.Flags['Cruxion'].CurrentValue = true
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Error";
+ 				Text = "You haven't reached the end in Hotel/Mines";
+			})
+		end
+	end,
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "Blitzkrieg",
+	CurrentValue = false,
+	Flag = "Blitzkrieg",
+	Callback = function(Value)
+		if Value and files then
+			Rayfield.Flags['Blitzkrieg'].CurrentValue = false
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Error";
+ 				Text = "You haven't reached the end in Hotel/Mines";
+			})
+		end
+	end,
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "Sightseeing",
+	CurrentValue = false,
+	Flag = "Sightseeing",
+	Callback = function(Value)
+		if Value and files then
+			Rayfield.Flags['Sightseeing'].CurrentValue = false
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Error";
+ 				Text = "You haven't reached the end in Hotel/Mines";
+			})
+		end
+	end,
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "New Sounds",
+	CurrentValue = true,
+	Flag = "NewSounds",
+	Callback = function()
+	end,
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "Door Material",
+	CurrentValue = true,
+	Flag = "DoorMaterial",
+	Callback = function()
+	end,
+})
+
+if non_beated then
+
+local Lighting = game:GetService("Lighting")
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 100
+Lighting.FogStart = 1
+Lighting.FogColor = Color3.new(0, 0, 0)
+
+game.SoundService.AmbientReverb = "ConcertHall"
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Fucku%20dumbass"))()
+
+end
+
+-- speed sprint
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Fuckumotherfuckernodad"))()
+
+-- achievement who using in this mode
+
+game.Players.PlayerAdded:Connect(function()
+
+---====== Load achievement giver ======---
+local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+
+---====== Display achievement ======---
+achievementGiver({
+    Title = "Forgotten Mode",
+    Desc = "WOW",
+    Reason = "Activate/Execute to Forgotten Mode",
+    Image = "rbxassetid://12309073114"
+})
+
+end)
+
+-- fireplace brightness even more
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" then
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+    wait(0.0005)
+
+if game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets:FindFirstChild("Fireplace") then
+
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets.Fireplace.Fireplace_Logs.Log.FireLight.Brightness = 25
+
+end
+
+end)
+
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" then
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+    wait(0.0005)
+
+if game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets:FindFirstChild("FireBarrel") then
+
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets.FireBarrel.Trash.Attachment.FireLight.Brightness = 25
+
+end
+
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- gc yo-ho
+
+local grabbing = false
+
+if grabbing then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Iwillfucku"))() -- spawn in mines, it's can spawn in hotel if you grabbed
+
+end
+
+-- vial of moonlight spawn in dresser hotel and spawn in oldwoodentable mines
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Yo"))()
+
+-- bottle of starlight spawn in fireplace if you activated modifier from haste
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Kdjejdb"))()
+
+-- bottle of spiralight spawn in table hotel and spawn in locker_small mines if you activated any modifier
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Ixjenxjd"))()
+
+-- possessed candle adding esp to see some things for easier
+
+coroutine.wrap(function()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+    if workspace:WaitForChild("game.Players.LocalPlayer.Name"):FindFirstChild("RiftCandle") or game.Players.LocalPlayer.Backpack:FindFirstChild("RiftCandle") then
+        for _, v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:GetDescendants()) do
+	        if v.Name == "KeyObtain" then
+		        selection(v)
+	        elseif v.Name == "FuseObtain" then
+		        selection(v)
+	        elseif v.Name == "LeverForGate" then
+		        selection(v)
+	        elseif v.Name == "MinesGenerator" then
+		        selection(v)
+	        elseif v.Name == "MinesGateButton" then
+		        selection(v)
+	        elseif v.Name == "ChestBox" then
+		        selection(v)
+	        elseif v.Name == "ChestBoxLocked" then
+		        selection(v)
+	        elseif v.Name == "Toolshed_Small" then
+		        selection(v)
+	        elseif v.Name == "Chest_Vine" then
+		        selection(v)
+	        elseif v.Name == "LiveHintBook" then
+		        selection(v)
+	        elseif v.Name == "ElevatorKeyObtain" then
+		        selection(v)
+	        elseif v.Name == "LiveBreakerPolePickup" then
+		        selection(v)
+	        elseif v.Name == "WaterPump" then
+		        selection(v)
+	        end
+        end
+     end
+end)
+
+end)()
+
+--
+
+-- eyes nightmare in one room
+ 
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" then
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+    wait(1)
+
+game.Players.LocalPlayer.PlayerGui.MainUI.Jumpscare.Jumpscare_Eyes.BackgroundColor3 = Color3.fromRGB(255, 0, 55)
+ 
+    if game.Workspace:FindFirstChild("Eyes") then
+ 
+game.Workspace.Eyes.Core.Attachment.EyesParticle.Color = ColorSequence.new({
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(1, 0.305881, 0.305881)),
+ 
+            ColorSequenceKeypoint.new(0.305881, Color3.new(1, 0.305881, 0.305881)),
+ 
+            ColorSequenceKeypoint.new(0.305881, Color3.new(1, 0.305881, 0.305881)),
+ 
+            ColorSequenceKeypoint.new(1, Color3.new(1, 0.305881, 0.305881)),
+ 
+        })
+ 
+		--
+ 
+game.Workspace.Eyes.Core.Ambience.PlaybackSpeed = 0.9
+
+for _, v in next, workspace.Eyes.Core:GetDescendants() do
+
+    if v.Name == "PointLight" then
+
+v.Color = Color3.fromRGB(148, 0, 17)
+
+    end
+
+end
+
+if game.ReplicatedStorage:WaitForChild("LiveModifiers"):FindFirstChild("TrickOrTreat") then
+
+game.Workspace.Eyes.Core.Initiate.PlaybackSpeed = 0.5
+
+game.Workspace.Eyes.Core.Attack.PlaybackSpeed = 1.5
+
+end
+
+    end
+
+end)
+ 
+--
+
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Fools" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+    wait(1)
+ 
+    if game.Workspace:FindFirstChild("Eyes") then
+ 
+game.Workspace.Eyes.Core.Attachment.EyesParticle.Color = ColorSequence.new({
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(1, 0.305881, 0.305881)),
+ 
+            ColorSequenceKeypoint.new(0.305881, Color3.new(1, 0.305881, 0.305881)),
+ 
+            ColorSequenceKeypoint.new(0.305881, Color3.new(1, 0.305881, 0.305881)),
+ 
+            ColorSequenceKeypoint.new(1, Color3.new(1, 0.305881, 0.305881)),
+ 
+        })
+ 
+		--
+ 
+game.Workspace.Eyes.Core.Ambience.PlaybackSpeed = 0.9
+
+    end
+
+end)
+ 
+--
+
+--[[ ]]--
+
+end
+ 
+end)()
+ 
+--
+
+-- the lights destroyers
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['LightsDestroy'].CurrentValue == true and game.ReplicatedStorage.GameData.LatestRoom.Value == 1 or Rayfield.Flags['LightsDestroy'].CurrentValue == false and game.ReplicatedStorage.GameData.LatestRoom.Value == 51 then
+
+print("The lights working broke")
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+    wait(0.0005)
+
+workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)].Assets.Light_Fixtures:Destroy()
+
+end)
+
+--
+
+end
+
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- rugs destroyers (idk)
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['LightsDestroy'].CurrentValue == true and game.ReplicatedStorage.GameData.LatestRoom.Value == 1 or Rayfield.Flags['LightsDestroy'].CurrentValue == false and game.ReplicatedStorage.GameData.LatestRoom.Value == 51 then
+
+print("The lights working broke")
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+    wait(0.0005)
+
+workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)].Assets.Rug:Destroy()
+
+end)
+
+--
+
+end
+
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- chandeliers destroyers
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['LightsDestroy'].CurrentValue == true and game.ReplicatedStorage.GameData.LatestRoom.Value == 1 or Rayfield.Flags['LightsDestroy'].CurrentValue == false and game.ReplicatedStorage.GameData.LatestRoom.Value == 51 then
+
+print("The lights working broke")
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+    wait(0.0005)
+
+workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)].Assets.Chandelier:Destroy()
+
+end)
+
+--
+
+end
+
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- chat for the lights destroying
+
+coroutine.wrap(function()
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+if Rayfield.Flags['LightsDestroy'].CurrentValue == true and game.ReplicatedStorage.GameData.LatestRoom.Value == 3 or Rayfield.Flags['LightsDestroy'].CurrentValue == false and game.ReplicatedStorage.GameData.LatestRoom.Value == 53 then
+
+game.TextChatService.TextChannels.RBXSystem:DisplaySystemMessage("The lights has been destroys now!")
+
+wait(10)
+
+local horror_audio = Instance.new("Sound", workspace)
+ horror_audio.Name = "Horror_Audio"
+ horror_audio.SoundId = "rbxassetid://172313730"
+ horror_audio.Volume = 1
+ horror_audio.Looped = true
+ horror_audio:Play()
+
+end
+
+end)
+
+end)()
+
+--
+
+-- door new materials
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Fools" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['DoorMaterial'].CurrentValue then
+
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Material = "Brick"
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Sign.Material = "Marble"
+
+end
+
+end)
+
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['DoorMaterial'].CurrentValue then
+
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Material = "Marble"
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.SignShape.Material = "Rock"
+
+end
+
+end)
+
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Backdoor" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['DoorMaterial'].CurrentValue then
+
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Material = "Rock"
+
+end
+
+end)
+
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Rooms" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['DoorMaterial'].CurrentValue then
+
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Material = "Glass"
+
+end
+
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- key obtain new click sound
+
+if Rayfield.Flags['NewSounds'].CurrentValue then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Key"))()
+
+end
+
+-- new the lights bulb sounds
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Fools" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Retro" then
+
+game.ReplicatedStorage.Sounds.BulbCharge:GetPropertyChangedSignal("SoundId"):Connect(function()
+
+if game.ReplicatedStorage.Sounds.BulbCharge.SoundId == "rbxassetid://11460001697" then
+
+game.ReplicatedStorage.Sounds.BulbCharge.SoundId = "rbxassetid://9125973984"
+
+end
+
+end)
+
+game.ReplicatedStorage.Sounds.BulbZap:GetPropertyChangedSignal("SoundId"):Connect(function()
+
+if game.ReplicatedStorage.Sounds.BulbZap.SoundId == "rbxassetid://8829969521" then
+
+game.ReplicatedStorage.Sounds.BulbZap.SoundId = "rbxassetid://4288784832"
+
+end
+
+end)
+
+game.ReplicatedStorage.Sounds.BulbBreak:GetPropertyChangedSignal("SoundId"):Connect(function()
+
+if game.ReplicatedStorage.Sounds.BulbBreak.SoundId == "rbxassetid://8828938165" then
+
+game.ReplicatedStorage.Sounds.BulbBreak.SoundId = "rbxassetid://6737582273"
+
+end
+
+end)
+
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Backdoor" then
+
+game.ReplicatedStorage.Sounds.BulbZap:GetPropertyChangedSignal("SoundId"):Connect(function()
+
+if game.ReplicatedStorage.Sounds.BulbZap.SoundId == "rbxassetid://8829969521" then
+
+game.ReplicatedStorage.Sounds.BulbZap.SoundId = "rbxassetid://5857559198"
+
+end
+
+end)
+
+game.ReplicatedStorage.Sounds.BulbBreak:GetPropertyChangedSignal("SoundId"):Connect(function()
+
+if game.ReplicatedStorage.Sounds.BulbBreak.SoundId == "rbxassetid://8828938165" then
+
+game.ReplicatedStorage.Sounds.BulbBreak.SoundId = "rbxassetid://260496290"
+
+end
+
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- timothy new jumpscare sound
+
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.SpiderJumpscare.Scare.SoundId = "rbxassetid://8080941676"
+
+-- hide monster release scare
+
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.HideMonster.Scare.SoundId = "rbxassetid://9126213765"
+
+-- goofy darkness
+
+game.Workspace.Ambience_Dark.SoundId = "rbxassetid://6535784827"
+game.Workspace.Ambience_Dark.PlaybackSpeed = 1
+
+-- WOW
+
+local DeathNew = "rbxassetid://132108923310487"
+
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.Health.Death.SoundId = DeathNew
+
+game.TextChatService.TextChannels.RBXSystem:DisplaySystemMessage("You can finally open the door!")
+
+-- Node's Fixings
+
+coroutine.wrap(function()
+
+game:GetService("ReplicatedStorage").GameData.LatestRoom.Changed:Connect(function(v)
+
+   W = game:GetService("Workspace").CurrentRooms[v].PathfindNodes:Clone()
+
+W.Parent = game:GetService("Workspace").CurrentRooms[v]
+
+W.Name = 'Nodes'
+
+end)
+
+end)()
+
+--
+
+-- gloom
+
+coroutine.wrap(function()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['LightsDestroy'].CurrentValue == true and game.ReplicatedStorage.GameData.LatestRoom.Value == 1 or Rayfield.Flags['LightsDestroy'].CurrentValue == false and game.ReplicatedStorage.GameData.LatestRoom.Value == 51 then
+
+while true do
+ 
+local sctm = math.random(45,90)
+ 
+wait(sctm)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Frogotten%20btw"))()
+
+print("hello!")
+
+end
+
+end
+
+end)
+
+end)()
+
+--
+
+-- fatality (no way)
+
+coroutine.wrap(function()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if Rayfield.Flags['LightsDestroy'].CurrentValue == true and game.ReplicatedStorage.GameData.LatestRoom.Value == 1 or Rayfield.Flags['LightsDestroy'].CurrentValue == false and game.ReplicatedStorage.GameData.LatestRoom.Value == 51 then
+
+while true do
+ 
+local sctm = math.random(175,200)
+ 
+wait(sctm)
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Entities"))()
+
+print("fatalties shake!")
+
+end
+
+end
+
+end)
+
+end)()
+
+--
+
+-- caption for clicking fireplace and barrel & new cool item
+ 
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+for _, v in next, game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets:GetDescendants() do
+ 
+    if v.Name == "Fireplace_Logs" and v.Parent.Name == "Fireplace" then
+ 
+        local a = v:Clone()
+ 
+              a.Parent = v.Parent
+ 
+              local b = a.ToolEventPrompt
+
+if workspace[game.Players.LocalPlayer.Name]:FindFirstChild("PurpleFlashlight") or game.Players.LocalPlayer.Backpack:FindFirstChild("PurpleFlashlight") then
+
+b:Destroy()
+
+end
+ 
+b.Triggered:Connect(function()
+ 
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 232, 0)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Why do you want to clicking fireplace?',true)
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 222, 189)
+
+local spawningchance = math.random(670, 870)
+
+if spawningchance == 670 or game.ReplicatedStorage:WaitForChild("LiveModifiers"):FindFirstChild("BackdoorHaste") and spawningchance == 870 then
+
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 0, 202)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Awesome cool item!',true)
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 222, 189)
+
+b:Destroy()
+
+---====== Load achievement giver ======---
+local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+
+---====== Display achievement ======---
+achievementGiver({
+    Title = "Omg!",
+    Desc = "PURPLE FLASHLIGHT!!!",
+    Reason = "Do click & click from fireplace or barrel",
+    Image = "rbxassetid://12309073114"
+})
+
+wait(1)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/M"))()
+
+writefile("Forgotten Mode Saves.artemis", "a4MYX87FzPxmx2MR6")
+
+end
+ 
+end)
+ 
+        v:Destroy()
+ 
+end
+ 
+    end
+ 
+
+
+end)
+
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" then
+
+if isfile("Forgotten Mode Saves.artemis") then
+
+local pass = readfile("Forgotten Mode Saves.artemis")
+
+if pass == "a4MYX87FzPxmx2MR6" then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/M"))()
+
+end
+
+end
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+for _, v in next, game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets:GetDescendants() do
+
+    if v:IsA("BasePart") and v.Name == "Planks" and v.Parent.Name == "FireBarrel" then
+ 
+        local a = v:Clone()
+ 
+              a.Parent = v.Parent
+ 
+              local b = a.ToolEventPrompt
+ 
+b.Triggered:Connect(function()
+
+if workspace[game.Players.LocalPlayer.Name]:FindFirstChild("PurpleFlashlight") or game.Players.LocalPlayer.Backpack:FindFirstChild("PurpleFlashlight") then
+
+b:Destroy()
+
+end
+ 
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 232, 0)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Why do you want to clicking barrel?',true)
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 222, 189)
+
+local spawningchance = math.random(670, 870)
+
+if spawningchance == 670 or game.ReplicatedStorage:WaitForChild("LiveModifiers"):FindFirstChild("BackdoorHaste") and spawningchance == 870 then
+
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 0, 202)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Awesome cool item!',true)
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 222, 189)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/M"))()
+
+b:Destroy()
+
+---====== Load achievement giver ======---
+local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+
+---====== Display achievement ======---
+achievementGiver({
+    Title = "Omg!",
+    Desc = "PURPLE FLASHLIGHT!!!",
+    Reason = "Do click & click from fireplace or barrel",
+    Image = "rbxassetid://12309073114"
+})
+
+end
+ 
+end)
+ 
+        v:Destroy()
+ 
+end
+ 
+    end
+ 
+
+
+end)
+
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Rooms" then
+
+if isfile("Forgotten Mode Saves.artemis") then
+
+local pass = readfile("Forgotten Mode Saves.artemis")
+
+if pass == "a4MYX87FzPxmx2MR6" then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/M"))()
+
+end
+
+end
+
+--[[ ]]--
+
+end
+ 
+end)()
+ 
+--
+
+-- custom door sounds
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/READM"))()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+if game.ReplicatedStorage.GameData.Floor.Value == "Hotel" and game.ReplicatedStorage:WaitForChild("LiveModifiers"):FindFirstChild("TrickOrTreat") then
+
+while true do
+
+local sctm = math.random(10, 200)
+
+wait(sctm)
+
+idk:Play()
+
+end
+
+end
+
+-- echo sound (background echo effects)
+
+if Rayfield.Flags['EchoEffects'].CurrentValue then
+
+game.SoundService.AmbientReverb = "ConcertHall"
+
+end
+
+-- creating fog
+
+if Rayfield.Flags['fog'].CurrentValue == true then
+
+local Lighting = game:GetService("Lighting")
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 100
+Lighting.FogStart = 1
+Lighting.FogColor = Color3.new(0, 0, 0)
+
+end
+
+-- custom crucifix can spawn in table/locker_small/dressers/dresser_single/other
+
+if Rayfield.Flags['Cruxion'].CurrentValue == true then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Hhh"))()
+
+end
+
+-- blitz
+
+coroutine.wrap(function()
+
+if Rayfield.Flags['Blitzkrieg'].CurrentValue then
+
+while true do
+
+wait(180)
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Spawner"))()
+
+end
+
+end
+
+end)()
+
+--
+
+-- new entity
+
+coroutine.wrap(function()
+
+if Rayfield.Flags['Sightseeing'].CurrentValue then
+
+while true do
+
+local sctm = math.random(112,340)
+ 
+wait(sctm)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Model"))()
+
+end
+
+end
+
+end)()
+
+--
+
+Rayfield:Destroy()
+
+game.Players.PlayerAdded:Connect(function()
+
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(0, 255, 0)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Script runs according to start room',true)
+game.Players.LocalPlayer:WaitForChild("PlayerGui").MainUI.MainFrame.Caption.TextColor3 = Color3.fromRGB(255, 222, 189)
+
+game.TextChatService.TextChannels.RBXSystem:DisplaySystemMessage("Forgotten Mode has been updated (version v2.5)")
+
+end)
+
+game.TextChatService.TextChannels.RBXSystem:DisplaySystemMessage("If you in PC, click shift to sprinting, have fun!")
+
+-- intro text
+
+local spawn_nm = Instance.new("Sound", workspace)
+ spawn_nm.SoundId = "rbxassetid://9126213741"
+ spawn_nm.Volume = 1
+ spawn_nm:Play()
+local spawn_nm2 = Instance.new("Sound", workspace)
+ spawn_nm2.SoundId = "rbxassetid://122998810708137"
+ spawn_nm2.PlaybackSpeed = 0.3
+ spawn_nm2.Volume = 5
+ spawn_nm2:Play()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Sound"))()
+
+game.Players.PlayerAdded:Connect(function()
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Succeed to win",true)
+
+game.TextChatService.TextChannels.RBXSystem:DisplaySystemMessage("Also here you can see and grub new items!")
+
+end)
+
+spawn_nm:Destroy()
+spawn_nm2:Destroy()
+
+game.TextChatService.TextChannels.RBXSystem:DisplaySystemMessage("Discord Server link - 7vWNxU9x")
+
+-- horror sound (playing for games)
+
+game:GetService("SoundService", Workspace)
+local horror_sound = Instance.new("Sound", Workspace)
+ horror_sound.SoundId = "rbxassetid://9114625745"
+ horror_sound.Volume = 1
+ horror_sound.Looped = true
+ horror_sound:Play()
+
+-- on/off horror ambience
+
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Dread.AmbienceCold:GetPropertyChangedSignal("Playing"):Connect(function()
+
+if game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Dread.AmbienceCold.Playing == true then
+
+game:GetService("TweenService"):Create(horror_sound, TweenInfo.new(5),{PlaybackSpeed = 0}):Play()
+
+end
+
+end)
+
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Dread.AmbienceEnd:GetPropertyChangedSignal("Playing"):Connect(function()
+
+if game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Dread.AmbienceEnd.Playing == true then
+
+game:GetService("TweenService"):Create(horror_sound, TweenInfo.new(5),{PlaybackSpeed = 1}):Play()
+
+end
+
+end)
+
+game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+
+if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then
+
+game:GetService("TweenService"):Create(horror_sound, TweenInfo.new(5),{PlaybackSpeed = 0}):Play()
+
+end
+
+end)
+
+for _, reviving in pairs(game.Players.LocalPlayer.PlayerGui.MainUI.GiftRevive.Players:GetDescendants()) do
+
+if reviving.Name == "Revived" then
+
+reviving:GetPropertyChangedSignal("Visible"):Connect(function()
+
+if reviving.Visible == true then
+
+game:GetService("TweenService"):Create(horror_sound, TweenInfo.new(5),{PlaybackSpeed = 1}):Play()
+
+end
+
+end)
+
+end
+
+end
+
+-- cave ambience plays (if you reached ready starting dread)
+
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Dread.AmbienceCold:GetPropertyChangedSignal("Playing"):Connect(function()
+
+if game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Dread.AmbienceCold.Playing == true then
+
+local cave = Instance.new("Sound", workspace)
+cave.SoundId = "rbxassetid://91162367600487"
+cave.Volume = 5
+cave:Play()
+
+end
+
+end)
+
+-- painting flowers
+
+coroutine.wrap(function()
+ 
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" then
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+for _, v in next, game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets:GetDescendants() do
+ 
+    if v.Name == "Painting_VeryBig" then
+ 
+local paintingchance = math.random(1, 10)
+ 
+if paintingchance == 10 then
+ 
+        local a = v:Clone()
+ 
+              a.Parent = v.Parent
+ 
+              a.Canvas.SurfaceGui.ImageLabel.Image = "rbxassetid://71582951991587"
+ 
+              a.Canvas.SurfaceGui.ImageLabel.BackgroundTransparency = 1
+ 
+              a.Canvas.SurfaceGui.ImageLabel.BackgroundColor3 = Color3.fromRGB(159, 159, 159)
+ 
+              a.Canvas.SurfaceGui.ImageLabel.ImageTransparency = 0.5
+ 
+              a.Name = "Painting Easter Egg"
+ 
+              local b = a.InteractPrompt
+ 
+b.Triggered:Connect(function()
+ 
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('This painting is titled "The hour of joy"',true)
+ 
+end)
+ 
+        v:Destroy()
+ 
+end
+ 
+    end
+ 
+ 
+ 
+end
+ 
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- release screech
+
+game.ReplicatedStorage.Entities.Screech.Top.Eyes.Color = Color3.fromRGB(255, 255, 0)
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech.Caught.SoundId = "rbxassetid://7492033495"
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech.Caught.PlaybackSpeed = 1.6
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech.Attack.SoundId = "rbxassetid://8080941676"
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Fools" then
+
+game.ReplicatedStorage.Entities.Screech.Top.Eyes.Color = Color3.fromRGB(255, 255, 0)
+game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech.Attack.SoundId = "rbxassetid://8080941676"
+
+--[[ ]]--
+
+end
+
+-- ambience
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" then
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+wait(2)
+ 
+    if game.Workspace:FindFirstChild("SeekMovingNewClone") then
+ 
+    wait(0.0005)
+
+game.Workspace.SeekMovingNewClone.SeekMusic.SoundId = "rbxassetid://10944333705"
+game.Workspace.SeekMovingNewClone.SeekMusic.Volume = "0.7"
+
+    end
+
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- ambience 2
+
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" then
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+wait(1)
+
+    if game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:FindFirstChild("FigureSetup") then
+ 
+    wait(0.0005)
+
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].FigureSetup.Ambience.SoundId = "rbxassetid://10472612727"
+game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].FigureSetup.Ambience.Volume = "0.7"
+game.Workspace.CurrentRooms["51"].FigureSetup.AmbienceEnd.SoundId = "rbxassetid://4890185640"
+game.Workspace.CurrentRooms["51"].FigureSetup.AmbienceEnd.Volume = "0.5"
+
+    end
+ 
+end)
+
+--[[ ]]--
+
+end
+
+end)()
+
+--
+
+-- intro text in the jeff's shop
+
+coroutine.wrap(function()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 52 then
+
+local spawn_nm = Instance.new("Sound", workspace)
+ spawn_nm.SoundId = "rbxassetid://307631257"
+ spawn_nm.Volume = 1
+ spawn_nm:Play()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Kys"))()
+
+end
+
+end)
+
+end)()
+
+--
+
+-- intro text in the courtyard and rad jumpscare errors
+
+coroutine.wrap(function()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 89 then
+
+local spawn_nm = Instance.new("Sound", workspace)
+ spawn_nm.SoundId = "rbxassetid://7132953277"
+ spawn_nm.Volume = 1
+ spawn_nm:Play()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Currupted"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Ui"))()
+
+end
+
+end)
+
+end)()
+
+--
+
+-- intro in the electrical room
+coroutine.wrap(function()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 100 then
+
+local spawn_nm = Instance.new("Sound", workspace)
+ spawn_nm.SoundId = "rbxassetid://4676040750"
+ spawn_nm.Volume = 1
+ spawn_nm:Play()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Siunddf"))()
+
+end
+
+end)
+
+end)()
+
+--
+
+-- a-60
+
+coroutine.wrap(function()
+ 
+while true do
+ 
+wait(330)
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/News"))()
+
+end
+
+end)()
+
+--
+
+-- a-90 (vickokokoko)
+
+coroutine.wrap(function()
+ 
+while true do
+ 
+local sctm = math.random(90,100)
+ 
+wait(sctm)
+
+spawn(function()
+require(game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.A90)(require(game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game))
+end)
+wait(2)
+if game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Jumpscare.Jumpscare_A90.FaceAngry.Visible == true then
+wait(1)
+game.Players.LocalPlayer.Character.Humanoid:TakeDamage(35)
+elseif game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Jumpscare.Jumpscare_A90.FaceAngry.Visible == false then
+game.Players.PlayerAdded:Wait()
+---====== Load achievement giver ======---
+local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+ 
+---====== Display achievement ======---
+achievementGiver({
+    Title = "DON'T MOVE",
+    Desc = "Stop moving to you!",
+    Reason = "Encounter A-90",
+    Image = "rbxassetid://33336213"
+})
+end
+wait(1)
+if game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0 then
+local ReSt = game:GetService("ReplicatedStorage") 
+ ReSt.GameStats["Player_".. game.Players.LocalPlayer.Name].Total.DeathCause.Value = "A-90"
+firesignal(ReSt.RemotesFolder.DeathHint.OnClientEvent, {"Oh... hello", "Why you found this script?", "Anyways, what'd you died?", "Oh, the red one", "I'm sure it's isn't too confusing", "He attacks.. uh", "Nevermind, so you call to A-90", "I hope you mind try again, it's can be helpful maybe.."}, "Yellow")
+end
+
+end 
+
+end)()
+
+--
+
+-- a-120
+
+coroutine.wrap(function()
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 60 then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/What"))()
+
+end
+
+end)
+
+end)()
+
+--
+
+-- a-185 (unhinged)
+
+coroutine.wrap(function()
+
+while true do
+
+local sctm = math.random(350,15000)
+ 
+wait(sctm)
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Cue"))()
+
+end
+
+end)()
+
+--
+
+-- E-60
+
+coroutine.wrap(function()
+
+while true do
+
+local chance = math.random(1, 2)
+
+wait(250)
+
+if chance == 2 then
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/E60"))()
+
+else
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Secret entity did not dangerous',true)
+ 
+end
+
+end
+
+end)
+
+ 
+--
+ 
+-- E-200 (rarest painting entity in hotel)
+ 
+coroutine.wrap(function()
+ 
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" then
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+for _, v in next, game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets:GetDescendants() do
+ 
+    if v.Name == "Painting_Small" then
+ 
+local paintingchance = math.random(3, 30)
+ 
+if paintingchance == 3 then
+ 
+        local a = v:Clone()
+ 
+              a.Parent = v.Parent
+ 
+              a.Canvas.SurfaceGui.ImageLabel.Image = "rbxassetid://110807448126874"
+ 
+              a.Canvas.SurfaceGui.ImageLabel.BackgroundTransparency = 1
+ 
+              a.Canvas.SurfaceGui.ImageLabel.BackgroundColor3 = Color3.fromRGB(159, 159, 159)
+ 
+              a.Canvas.SurfaceGui.ImageLabel.ImageTransparency = 0.5
+ 
+              a.Name = "Painting Easter Egg"
+ 
+              local b = a.InteractPrompt
+ 
+b.Triggered:Connect(function()
+ 
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('I do not remember, that was an image here...',true)
+ 
+wait(3)
+ 
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('I think, I only see it in the next room...',true)
+ 
+writefile("Forgotten Mode Saves.artemis", "Zq5XdHxSzyh")
+ 
+end)
+ 
+        v:Destroy()
+ 
+end
+ 
+    end
+ 
+ 
+ 
+end
+ 
+end)
+ 
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Rooms" then
+ 
+if isfile("Forgotten Mode Saves.artemis") then
+ 
+local pass = readfile("Forgotten Mode Saves.artemis")
+ 
+if pass == "Zq5XdHxSzyh" then
+ 
+--[[ monster goes here ]]--
+ 
+while true do
+ 
+wait(135)
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/E200"))()
+ 
+end
+ 
+--[[ ]]--
+ 
+end
+ 
+end
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- halt (scary collision in fools)
+ 
+coroutine.wrap(function()
+ 
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Fools" then
+ 
+while true do
+ 
+local sctm = math.random(85,95)
+ 
+wait(sctm)
+ 
+require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+ 
+workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+ 
+end
+ 
+--[[ ]]--
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- glitch
+ 
+coroutine.wrap(function()
+ 
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Fools" then
+
+while true do
+ 
+local sctm = math.random(590,999)
+ 
+wait(sctm)
+ 
+local spawn_chance = math.random(1, 2500)
+ 
+require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(Data, workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)])
+ 
+end
+ 
+--[[ ]]--
+ 
+end
+
+end)()
+ 
+--
+ 
+-- blackout
+ 
+coroutine.wrap(function()
+ 
+while true do
+ 
+wait(1290)
+ 
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Jahani-john/mayhem-mode/main/mayhemmode-main/ObfuscatedEntities/Blackout-obfuscated.lua'))()
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- depth (vickokokoko and me)
+ 
+coroutine.wrap(function()
+ 
+while true do
+ 
+wait(1700)
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Cruel"))()
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- matcher
+ 
+coroutine.wrap(function()
+ 
+while true do
+ 
+wait(150)
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+ 
+wait(0.3)
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Entitesmodel"))()
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- rebound
+ 
+coroutine.wrap(function()
+ 
+while true do
+ 
+wait(450)
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Models"))()
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- hunger/hungered (vickokokoko and me)
+ 
+coroutine.wrap(function()
+ 
+while true do
+ 
+wait(850)
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Models"))()
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- smiler (vickokokoko and me)
+ 
+coroutine.wrap(function()
+ 
+while true do
+ 
+wait(960)
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+require(game.ReplicatedStorage.ClientModules.Module_Events).flicker(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value], 10)
+
+wait(12)
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Models"))()
+ 
+end
+ 
+end)()
+ 
+--
+
+ 
+-- monoxide (vickokokoko and me)
+ 
+coroutine.wrap(function()
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 61 then
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Enti"))()
+ 
+end
+ 
+end)
+ 
+end)()
+ 
+--
+ 
+-- blood rush (only mines)
+ 
+coroutine.wrap(function()
+ 
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" then
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 100 then
+ 
+--[[ monster goes waiting spawn ]]--
+ 
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Wait few seconds to spawn entity, so be careful!',true)
+wait(10)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Blodd"))()
+
+end
+
+end)
+ 
+--[[ ]]--
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- Claim
+ 
+coroutine.wrap(function()
+
+if game:GetService("ReplicatedStorage").GameData.Floor.Value == "Hotel" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Mines" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Backdoor" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Rooms" or game:GetService("ReplicatedStorage").GameData.Floor.Value == "Retro" then
+        game.ReplicatedStorage.GameData.LatestRoom.Changed: Connect(function()
+
+local spawn_chance = math.random(70, 140)
+
+if spawn_chance == 70 then
+
+local entityModel = true
+
+if game.Workspace:FindFirstChild("SeekMovingNewClone") or game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:FindFirstChild("FigureSetup") or game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:FindFirstChild("_ NestHandler") then
+
+entityModel = false
+
+end
+
+if entityModel then
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/READ"))()
+
+end
+ 
+end
+
+end)
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed: Connect(function()
+
+wait(1.4)
+
+if game.Workspace:FindFirstChild("Bubbles") then
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('Are you shy?',true)
+
+end
+
+end)
+
+workspace.ChildAdded:Connect(function(child)
+
+if child.Name == "Claim" then
+
+for _, v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:GetDescendants()) do
+
+if v.Name == "Neon" then
+
+v.Color = Color3.fromRGB(255, 0, 0)
+
+elseif v.Name == "PointLight" then
+
+v.Color = Color3.fromRGB(255, 0, 0)
+
+elseif v.Name == "SpotLight" then
+
+v.Color = Color3.fromRGB(255, 0, 0)
+
+end
+
+end
+
+end
+
+end)
+ 
+elseif game:GetService("ReplicatedStorage").GameData.Floor.Value == "Fools" then
+ 
+print("Multiple eye custom entity doesn't work in fools")
+ 
+--[[ ]]--
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- Phil
+ 
+coroutine.wrap(function()
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed: Connect(function()
+
+local spawn_chance = math.random(70, 140)
+
+if spawn_chance == 140 then
+ 
+local spawner_chance = math.random(1, 1750)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/So"))()
+ 
+end
+
+end)
+
+workspace.ChildAdded:Connect(function(child)
+
+if child.Name == "PhilBad" then
+
+wait(1)
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption('What the happened?!!!',true)
+
+end
+
+end)
+ 
+end)()
+ 
+--
+ 
+-- seek eyes
+ 
+coroutine.wrap(function()
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 49 or game.ReplicatedStorage.GameData.LatestRoom.Value == 90  or game.ReplicatedStorage.GameData.LatestRoom.Value == 91 or game.ReplicatedStorage.GameData.LatestRoom.Value == 92 or game.ReplicatedStorage.GameData.LatestRoom.Value == 93 or game.ReplicatedStorage.GameData.LatestRoom.Value == 94 or game.ReplicatedStorage.GameData.LatestRoom.Value == 95 or game.ReplicatedStorage.GameData.LatestRoom.Value == 96 or game.ReplicatedStorage.GameData.LatestRoom.Value == 97 then
+
+    wait(3)
+ 
+local a = game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game
+require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 100)
+ 
+    end
+ 
+end)
+ 
+end)()
+ 
+--
+ 
+-- seek eyes 2
+ 
+coroutine.wrap(function()
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 50 then
+ 
+    wait(7)
+ 
+local a = game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game
+require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 100)
+ 
+    end
+ 
+end)
+ 
+end)()
+ 
+--
+ 
+-- ambush crucifix item (secret)
+ 
+coroutine.wrap(function()
+ 
+while true do
+ 
+wait(3750)
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+ 
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("This crucifix looking green",true)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
+LoadCustomInstance("rbxassetid://11946820965").Parent = game:GetService("Players").LocalPlayer.Backpack
+ 
+end
+ 
+end)()
+ 
+--
+ 
+-- shears item (which made by Regular Vynixu and working)
+ 
+coroutine.wrap(function()
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 101 then
+ 
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("WHAT, HOW DID YOU EVEN GOT IT?!?!?",true)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darker-TheDarkestGuy/Scripts/refs/heads/main/Tool"))()
+ 
+end
+ 
+end)
+ 
+end)()
+ 
+--
+ 
+-- rush & ambush nightmare
+ 
+coroutine.wrap(function()
+ 
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+ 
+    wait(1)
+ 
+	game.Players.LocalPlayer.PlayerGui.MainUI.Jumpscare.Jumpscare_Rush.ImageLabel.ImageColor3 = Color3.fromRGB(255, 0, 0)
+ 
+	game.Players.LocalPlayer.PlayerGui.MainUI.Jumpscare.Jumpscare_Rush.ImageLabelBig.ImageColor3 = Color3.fromRGB(255, 0, 0)
+ 
+game.Players.LocalPlayer.PlayerGui.MainUI.Jumpscare.Jumpscare_Ambush.ImageLabel.ImageColor3 = Color3.fromRGB(255, 5, 50)
+ 
+    if game.Workspace:FindFirstChild("AmbushMoving") then
+ 
+game.Workspace.AmbushMoving.RushNew.Attachment.ParticleEmitter.Color = ColorSequence.new({
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(1, 0.305882, 0.305882)),
+ 
+            ColorSequenceKeypoint.new(0.305882, Color3.new(1, 0.305882, 0.305882)),
+ 
+            ColorSequenceKeypoint.new(0.305882, Color3.new(1, 0.305882, 0.305882)),
+ 
+            ColorSequenceKeypoint.new(1, Color3.new(1, 0.305882, 0.305882))
+ 
+        })
+ 
+game.Workspace.AmbushMoving.RushNew.Attachment.BlackTrail.Color = ColorSequence.new({
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(1, 0, 0)),
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(1, 0, 1)),
+ 
+            ColorSequenceKeypoint.new(1, Color3.new(1, 0, 1)),
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(1, 0, 1))
+ 
+        })
+ 
+		--
+
+for _, v in next, workspace.AmbushMoving.RushNew:GetDescendants() do
+
+    if v.Name == "PointLight" then
+
+v.Color = Color3.fromRGB(255, 0, 179)
+
+    end
+
+end
+ 
+game.Workspace.AmbushMoving.Ambience.PlaybackSpeed = 0.9		
+ 
+game.Workspace.AmbushMoving.RushNew.PlaySound.PlaybackSpeed = 0.4
+ 
+		game.Workspace.AmbushMoving.RushNew.Footsteps.PlaybackSpeed = 0.5
+ 
+    end
+ 
+    if game.Workspace:FindFirstChild("RushMoving") then
+ 
+        game.Workspace.RushMoving.RushNew.Attachment.BlackTrail.Color = ColorSequence.new({
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(0.407843, 0, 0)),
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(0.407843, 0, 0)),
+ 
+            ColorSequenceKeypoint.new(0.407843, Color3.new(0.407843, 0, 0)),
+ 
+            ColorSequenceKeypoint.new(0.407843, Color3.new(0.407843, 0, 0)),
+ 
+            ColorSequenceKeypoint.new(1, Color3.new(0.407843, 0, 0))
+ 
+        })
+ 
+        game.Workspace.RushMoving.RushNew.Attachment.ParticleEmitter.Color = ColorSequence.new({
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(1, 0, 0)),
+ 
+            ColorSequenceKeypoint.new(0, Color3.new(1, 0, 1)),
+ 
+            ColorSequenceKeypoint.new(1, Color3.new(1, 0, 0))
+ 
+        })
+ 
+		--
+ 
+		game.Workspace.RushMoving.RushNew.PlaySound.PlaybackSpeed = 0.05
+ 
+		game.Workspace.RushMoving.RushNew.Footsteps.PlaybackSpeed = 0.1
+ 
+    end
+ 
+end)
+ 
+--
+ 
+end)()
+ 
+--
+ 
+--
+ 
+--
